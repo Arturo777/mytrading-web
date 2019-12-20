@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTW 2</title>
+    <script src="Libraries/p5.js"></script>
+    <script src="Libraries/p5.dom.js"></script>
+    <script src="dataplayer.js"></script>
+    <script src="vela.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+  
+  <header class= "main-header">  
+    
+    <nav class= "nav main-nav">
+      <ul>
+        <li><a class="highlight" href="index.html">Home</a></li>
+        <li><a class="active"    href="dataplayer.html">Data Player</a></li>
+        <li><a class="highlight" href="risk.html">Risk Management</a></li>
+      </ul>
+    </nav>  
+    
+    <h1 class= "web-name web-name-large" > MY TRADING WEB</h1>
+  </header>
+    
+
+
+  <body>
+    <H2 class = "subtittle">Data Player<H2>  
+    <hr class= "subtittle-line">  
+    
+    <section> 
+      <div class= "inputs">
+          <strong>Pair: </strong>
+          From:<input value="EUR" id="PairFrom">
+          To:<input value="USD" id="PairTo">
+          <button  id='sumbmit'>Submit</button>
+      </div>  
+    </section> 
+
+    <section>
+      <H2 class = "subtittle subtittle_DataPlayer" id="tittlePair">EURUSD<H2>
+      <div id="timer">
+        <p>Counter: <span id="counterHtml">Loading...</span> Candlesticks
+        </p> 
+      </div>
+
+      <div id="canvas-container"></div>
+      <div id="controls-container">
+        <div id="slider-container"></div>
+        <input type="range" min="50" max="300" value="80" id="speed">
+        <div id="buttons">
+          <button  id='play'>Play</button>
+          <button  id='stop'>Stop</button> 
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+  </body>
+</html>

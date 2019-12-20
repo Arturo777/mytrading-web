@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Cuprum&display=swap');
+
+* {
+	box-sizing: border-box;
+	font-family: 'Playfair Display', serif;
+	
+}
+
+html body {
+	padding: 0;
+	margin: 0;
+}
+
+.nav ul {
+	margin:0;
+}
+
+.nav li {
+	display:inline;
+}
+
+.nav a {
+	display:inline-block;
+	padding: 1em;
+	color:white;
+	text-decoration: none;
+}
+
+.main-nav {
+	text-align: center;
+	font-size: 1.1em;
+	font-weight: lighter;
+	border-bottom: 2px solid rgb(255, 255, 255, .3);
+}
+
+.main-nav {
+	padding: 0 5%;
+}
+
+.nav a:hover {
+	background-color: rgb(255, 255, 255, .3);
+
+}
+
+.main-header {
+	background-color: rgb(0,0,0,.3);
+	background-image: url("images/bi.jpg");
+	background-blend-mode: multiply;
+	background-size: cover;
+	padding-bottom: 1%;
+}
+
+.web-name {
+	margin-bottom: 2%;
+	text-align: center;
+	font-size: 4em;
+	font-family: 'Special Elite', cursive;
+	color:white;
+}
+
+.web-name-large {
+font-size: 8em;
+}
+
+.subtittle {
+	color: black;
+	text-align: center;
+	font-size: 2.5em;
+	font-family: 'Cuprum', sans-serif;
+	margin: 3% auto;
+}
+
+ p {
+	color:black;
+	font-weight: lighter;
+	margin: 1.5% 5%;
+}
+
+.subtittle-line {
+	width: 50%;
+	margin-bottom: 2%;
+	height: 3px;
+	 /* old IE */
+    background-color: #b3cbff; /* Modern Browsers */
+	border:none;
+
+ }
+
+ .content {
+ 	
+	display:flex;
+	flex-flow: column wrap;
+  	margin: 0 5%;
+	margin-bottom: 5%;
+	justify-content: space-between;
+	  
+ }
+
+ .content-risk {
+ 	border:2px solid #b3cbff;
+ 	background-color: #f2f2f2;
+ }
+
+ /*COUNTER*/
+ #timer {
+	 text-align: center;
+ }
+ #counter {
+	 font-size: 1.5em;
+
+ }
+
+ /*CONTROLS*/
+
+ #controls-container {
+	width: 100%;
+	text-align: center;
+ }
+
+ #buttons {
+	 display: block;
+ }
+
+ #canvas-container {
+	text-align: center;
+ }
+
+ .inputs {
+	text-align: center;
+ }
+
+
+ /*Documentation button*/
+
+ #docu_link {
+	 color: rgb(0, 136, 255);
+	 font-size: 1em;
+	 padding:2%;
+	 text-decoration: none;
+	 border:3px solid rgba(0, 136, 255, 0.838);
+	 background-color: rgba(255, 255, 255, 0.776);
+	 width: 26%;
+	 align-self: center;
+	 margin: 3%;
+ }
+
+ #docu_link:hover {
+    background-color:  rgb(125, 186, 223, .3);
+}
+
+ 
+
+
+
+
+
