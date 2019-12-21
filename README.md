@@ -8,4 +8,4 @@ And the tools and skills that I am using here are the next:
 -API calls.
 -JSON objects METHODS.
 
-web site link: https://arturo777.github.io/mytrading-web
+Website link: https://arturo777.github.io/mytrading-web
