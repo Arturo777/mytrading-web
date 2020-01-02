@@ -117,14 +117,14 @@ function NewPair() {
 }
 
 function slidering() {
-	// if (mouseIsPressed) {
+	if (mouseIsPressed) {
 
-	// counter = sliderMain.value();
-	// } else {
+	counter = sliderMain.value();
+	} else {
 	
 	sliderMain.value(counter);
 	counterHtml.html(counter);
-	// }
+	}
 }
 
 function loading() {
@@ -196,7 +196,7 @@ function play() {
 		interval = false;
 		buttonPlay.html("Play");
 
-		//counter = sliderMain.value();
+		counter = sliderMain.value();
 	}
 
 	if (counter == 0) {
@@ -205,7 +205,7 @@ function play() {
 		counter = (hours.length)-1;
 		counterHtml.html(counter);
 
-		// sliderMain.value(counter);
+		sliderMain.value(counter);
 		interval = false;
 		closes = [];
 	}		
@@ -217,7 +217,7 @@ function stop () {
 	counter = (hours.length)-1;
 	counterHtml.html(counter);
 
-	// sliderMain.value(counter);
+	 sliderMain.value(counter);
 	interval = false;
 	closes = [];
 }
