@@ -21,7 +21,7 @@ let preloadedCloses = [];
 //CONTROLS
 let buttonPlay;
 let buttonStop;
-// let sliderMain;
+let sliderMain;
 
 //INPUTS
 let inputPairFrom, inputPairTo;
@@ -58,12 +58,7 @@ function setup() {
 	sumbmit = select("#askData");
 	sumbmit.mousePressed(NewPair);
 
-	timeFrame = select("#timeFrame")
-
-
-	
-	
-	
+	timeFrame = select("#timeFrame");
 
 	//CALL PRICES
 	askPrice();
@@ -78,8 +73,9 @@ function draw() {
 		textAlign(CENTER);
 		fill(37);
 		text('Loading...', width/2-25, height/2);
+		
 	} else {
-		// slidering();
+		slidering();
 		textSize(20);
 		fill(37);
 		text("Price: "+close,100,60);
@@ -120,16 +116,16 @@ function NewPair() {
 
 }
 
-// function slidering() {
-// 	if (mouseIsPressed) {
+function slidering() {
+	// if (mouseIsPressed) {
 
-// 	counter = sliderMain.value();
-// 	} else {
+	// counter = sliderMain.value();
+	// } else {
 	
-// 	sliderMain.value(counter);
-// 	counterHtml.html(counter);
-// 	}
-// }
+	sliderMain.value(counter);
+	counterHtml.html(counter);
+	// }
+}
 
 function loading() {
 	if (hours){
@@ -139,11 +135,11 @@ function loading() {
 		//SLIDERS 2
 		// console.log(hours.length);
 
-		// if (!sliderMain) {
-		// 	sliderMain = createSlider(0,(hours.length)-1,(hours.length)-1);
-		// }
-		// sliderMain.parent("slider-container");
-		// sliderMain.style('width', "800px");
+		 if (!sliderMain) {
+		 	sliderMain = createSlider(0,(hours.length)-1,(hours.length)-1);
+		 }
+		 sliderMain.parent("slider-container");
+		 sliderMain.style('width', "100%");
 		
 	}
 }
