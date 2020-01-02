@@ -9,7 +9,7 @@ function vela() {
     downSpike = min(closes);
 
     //MAPPING
-    translate(400, 250);
+    translate(width/2, height/2);
     openMapped = map(open, max(preloadedCloses), min(preloadedCloses), -200, 200);
     highMapped = map(high, max(preloadedCloses), min(preloadedCloses), -200, 200);
     lowMapped = map(low, max(preloadedCloses), min(preloadedCloses), -200, 200);
@@ -23,7 +23,7 @@ function vela() {
     
     //DRAWING CANDLE
     if (closeMapped < 0) {
-        fill(0,155,0);
+        fill (0,155,0);
     } else {
         fill(0,0,253)
     }

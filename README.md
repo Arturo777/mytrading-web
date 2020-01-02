@@ -6,6 +6,6 @@ And the tools and skills that I am using here are the next:
 -HTML CSS and Javascript Languages.
 -p5 libraries.
 -API calls.
--JSON objects METHODS.
+-JSON objects methods.
 
 Website link: https://arturo777.github.io/mytrading-web

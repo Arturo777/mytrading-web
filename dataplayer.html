@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MTW 2</title>
+    <title>MTW | Data Player </title>
     <script src="Libraries/p5.js"></script>
     <script src="Libraries/p5.dom.js"></script>
     <script src="dataplayer.js"></script>
@@ -11,58 +11,111 @@
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
 
-  
-  <header class= "main-header">  
-    
-    <nav class= "nav main-nav">
-      <ul>
-        <li><a class="highlight" href="index.html">Home</a></li>
-        <li><a class="active"    href="dataplayer.html">Data Player</a></li>
-        <li><a class="highlight" href="risk.html">Risk Management</a></li>
-      </ul>
-    </nav>  
-    
-    <h1 class= "web-name web-name-large" > MY TRADING WEB</h1>
-  </header>
-    
-
-
   <body>
-    <H2 class = "subtittle">Data Player<H2>  
-    <hr class= "subtittle-line">  
+    <header>  
+      <nav>
+        <ul>
+          <li class="logo"><a class="highlight" href="index.html">MTW </a></li>
+          <li id="li_active"><a class="highlight" href="index.html">Home</a></li>
+          <li><a class="active" href="dataplayer.html">Data Player</a></li>
+          <li><a class="highlight" href="risk.html">Risk Management</a></li>
+        </ul>
+      </nav>
+      <h1> MY TRADING WEB</h1> 
+    </header>
+
+    <h2 class = "subtittle">Data Player<h2>  
+    <hr class= "subtittle-line"> 
     
-    <section> 
-      <div class= "inputs">
-          <strong>Pair: </strong>
-          From:<input value="EUR" id="PairFrom">
-          To:<input value="USD" id="PairTo">
-          <button  id='sumbmit'>Submit</button>
-      </div>  
-    </section> 
+    
+    <main class="main-dataplayer">  
+      <section class="inputs-container"> 
 
-    <section>
-      <H2 class = "subtittle subtittle_DataPlayer" id="tittlePair">EURUSD<H2>
-      <div id="timer">
-        <p>Counter: <span id="counterHtml">Loading...</span> Candlesticks
-        </p> 
-      </div>
+        
+          <h3>Pair </h3>
 
-      <div id="canvas-container"></div>
-      <div id="controls-container">
-        <div id="slider-container"></div>
-        <input type="range" min="50" max="300" value="80" id="speed">
-        <div id="buttons">
-          <button  id='play'>Play</button>
-          <button  id='stop'>Stop</button> 
+          
+
+          From:<select id="PairFrom">
+            <option value = "EUR">EUR</option>
+            <option value = "AUD">AUD</option>
+            <option>CAD</option>
+            <option>CHF</option>
+            <option>JPY</option>
+            <option>EUR</option>
+            <option>GBP</option>
+            <option>NZD</option>
+            <option>USD</option>
+          </select>
+
+          To:<select id="PairTo">
+            <option>USD</option>
+            <option>AUD</option>
+            <option>CAD</option>
+            <option>CHF</option>
+            <option>JPY</option>
+            <option>EUR</option>
+            <option>GBP</option>
+            <option>NZD</option>
+            <option>USD</option>
+          </select><br><br>
+
+          <!-- Time Frame<select id="timeFrame" value="&interval=60min">
+            <option value="&interval=60min"> 60 min</option>
+            <option>30 min</option>
+            <option>60 min</option> -->
+
+
+          <!-- <div>Data Size
+          <input type="radio" id="dataSize" value="&outputsize=compact" checked><br>
+          <label for="&outputsize=full">Full</label>
+          </div> -->
+
+          <div>Data Size<br>
+
+            
+        
+            Full Data Size<input type="checkbox" id ="fullData"> <br>
+        
+         
+          </div>
+         
+
+
+
+          <button  id='askData'>Submit</button>
+        </div>  
+      
+        <div class="pair-counter">
+          <H2 class = "subtittle_DataPlayer" id="tittlePair">EURUSD<H2>
+          <div id="timer">
+            <p>Counter: <span id="counterHtml">Loading...</span> Candlesticks</p> 
+          </div>
+        </div>  
+      </section> 
+    
+      <section class = "canvas-controls">
+        
+        <div id="canvas-container"></div>
+        <div id="controls-container">
+          <div id="slider-container"></div>
+          <input type="range" min="50" max="300" value="80" id="speed">
+          
+          <div id="buttons">
+            <button  id='play'>Play</button>
+            <button  id='stop'>Stop</button> 
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
+  
 
-
-
-
-
+    <footer>
+      <h1 class=" logo_footer"><a>MTW</a></h1>
+      <p>e-mail: dark.rekyem.1x@gmail.com</p>
+      <div><a href="https://github.com/Arturo777">Github Link</a></div>
+    </footer>
 
   </body>
 </html>

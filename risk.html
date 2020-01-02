@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monthly Candlestick</title>
+    <title>MTW | Risk Management </title>
     <script src="Libraries/p5.js"></script>
     <script src="Libraries/p5.dom.js"></script>
     <script src="Libraries/p5.sound.js"></script>
@@ -12,100 +12,50 @@
   </head>
 
 
-
-  <header class= "main-header">
-    
-    <nav class= "nav main-nav">
-      <ul>
-        <li><a class="highlight" href="index.html">Home</a></li>
-        <li><a class="highlight" href="dataplayer.html">Data Player</a></li>
-        <li><a class="active"    href="risk.html">Risk Management</a></li>
-      </ul>
-    </nav>
-    
-    <h1 class= "web-name web-name-large" > MY TRADING WEB</h1>
-  </header>
-
-
-
   <body>
+    <header>  
+      <nav>
+        <ul>
+          <li class="logo"><a class="highlight" href="index.html">MTW </a></li>
+          <li id="li_active"><a class="highlight" href="index.html">Home</a></li>
+          <li><a class="highlight" href="dataplayer.html">Data Player</a></li>
+          <li><a class="active" href="risk.html">Risk Management</a></li>
+        </ul>
+      </nav>
+      <h1> MY TRADING WEB</h1> 
+    </header>
+ 
     <H2 class = "subtittle">Risk Management<H2>  
     <hr class= "subtittle-line">  
   
-    <section class="content content-risk">
-      <div class="content"> 
-        <h2>Lot Size</h2>
 
-            Balance =<input id='capital'>
+    <div class="risk-wraper">
+      <h1 class="tittle-inputs">Lot Size</h1>
 
-            Stop Loss for 0.01 =<input id='sc'>
-
-            %/Operation =<input id='perc'>
-
-            <button  id='showLot'>Show Lot Size</button> 
-
-            <p><strong>Lot Size For Level</strong></p>
-                 
-            <p id='lots'>Lots =</p>
-      </div>  
-    </section>
-
-  
-    <section class="content content-risk">
-      <div class="content"> 
-        <h2> FIBONACCI LEVELS</h2>
-        
-          <h3>Fibo Levels</h3>
-
-          Price 1 =<input id ='P1'>
-          Price 2 =<input id ='P2'>
-
-          <button  id='showlev'>Show Fibo Levels</button>
-
-          <h3 >Levels</h3>
-        <p id='L100'>100% = </p>
-        <p id='L786'>78.6% =</p>
-        <p id='L618'>61.8% =</p>
-        <p id='L50'>50% =</p>
-        <p id='L382'>38.2% =</p>
-        <p id='L236'>23.6% =</p>
-        <p id='L0'>0% =</p>
-      </div>
-    </section>
+      <section class="inputs-container main-risk">
     
+        <div class="lots-inputs">
+          
+          <div>Balance:<input id='capital' size="10"></div>
 
-    <section class="content content-risk">
-      <div class="content">
-        <h2> LOTTAGE DISTRIBUTION </h2>
-        
-        <p id='LotsWS0'>0% Stop = </p>
-        <p id='LotsWS236'>23.6% Stop = </p>
-        <p id='LotsWS382'>38.2% Stop = </p>
-        <p id='LotsWS50'>50% Stop = </p>
-        <p id='LotsWS618'>61.8% Stop = </p>
-        <p id='LotsWS786'>78.6% Stop = </p>
+          <div>Stop Loss for 0.01:<input id='sc' size="10"></div>
 
-        <button  id='showLD'>Show Lots Distribution</button>
-      </div>
+          <div>%/Operation:<input id='perc' size="10"></div>
+        </div>
+      
+        <div class ="button-result">
+          <div><button  id='showLot'><a href="#">Show Lot Size</a></button> </div>
+          <div class="lots-result"><p id='lots'>Lots:</p></div>
+        </div>
+      </section>
+    </div>
 
-    </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
+    <footer>
+      <h1 class=" logo_footer"><a>MTW</a></h1>
+      <p>e-mail: dark.rekyem.1x@gmail.com</p>
+      <div><a href="https://github.com/Arturo777">Github Link</a></div>
+    </footer>
 
   </body>
 </html>

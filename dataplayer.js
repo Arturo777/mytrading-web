@@ -1,13 +1,13 @@
 //CALL PRICES
 let url = "https://www.alphavantage.co/query?function=FX_INTRADAY&from_symbol=";
-
 let url2= "&to_symbol=";
 
-let url3="&interval=60min&apikey=GLIC8LSNPTUPX8TM"
+let urlInterval= "&interval=60min";
+
+let apiKey="&apikey=GLIC8LSNPTUPX8TM";
 
 let sizeData="&outputsize=compact";
 
-let urlW = "https://www.alphavantage.co/query?function=FX_WEEKLY&from_symbol=EUR&to_symbol=USD&apikey=GLIC8LSNPTUPX8TM";
 
 let hours, prices;
 
@@ -15,23 +15,26 @@ let hours, prices;
 var counter;
 let counterHtml;
 let interval;
-
 let closes =[];
-
 let preloadedCloses = [];
 
 //CONTROLS
 let buttonPlay;
 let buttonStop;
-let sliderMain;
+// let sliderMain;
 
 //INPUTS
 let inputPairFrom, inputPairTo;
 let from, to, sumbmit;
 
+let timeFrame;
+
 function setup() {
-	let cnv = createCanvas(800, 500);
-	cnv.parent("canvas-container");
+
+	let cnvDiv = select("#canvas-container");
+	let cnv = createCanvas(450, 500);
+
+	cnv.parent(cnvDiv);
 
 	//COUNTER
 	counterHtml = select("#counterHtml");
@@ -50,25 +53,33 @@ function setup() {
 	inputPairFrom = select("#PairFrom");
 	inputPairTo = select("#PairTo");
 
-	inputPairTo.changed(NewPair);
+	// inputPairTo.changed(NewPair);
 
-
-	sumbmit = select("#sumbmit");
+	sumbmit = select("#askData");
 	sumbmit.mousePressed(NewPair);
+
+	timeFrame = select("#timeFrame")
+
+
+	
+	
+	
 
 	//CALL PRICES
 	askPrice();
+
+	
 }
 
 function draw() {
-	background(180);
+	background(280);
 	if (!prices) {
 		textSize(40);
 		textAlign(CENTER);
 		fill(37);
 		text('Loading...', width/2-25, height/2);
 	} else {
-		slidering();
+		// slidering();
 		textSize(20);
 		fill(37);
 		text("Price: "+close,100,60);
@@ -98,22 +109,27 @@ function NewPair() {
 	preloadedCloses = [];
 	tittlePair = select("#tittlePair");
 	tittlePair.html(inputPairFrom.value().toUpperCase()+inputPairTo.value().toUpperCase());
+
+	if (fullData.checked) {
+		console.log("checked!");
+		sizeData = "&outputsize=full";
+
+	 } 
+	
 	askPrice();
 
-
-
 }
 
-function slidering() {
-	if (mouseIsPressed) {
+// function slidering() {
+// 	if (mouseIsPressed) {
 
-	counter = sliderMain.value();
-	} else {
+// 	counter = sliderMain.value();
+// 	} else {
 	
-	sliderMain.value(counter);
-	counterHtml.html(counter);
-	}
-}
+// 	sliderMain.value(counter);
+// 	counterHtml.html(counter);
+// 	}
+// }
 
 function loading() {
 	if (hours){
@@ -123,19 +139,22 @@ function loading() {
 		//SLIDERS 2
 		// console.log(hours.length);
 
-		if (!sliderMain) {
-			sliderMain = createSlider(0, (hours.length)-1, (hours.length)-1);
-		}
-		sliderMain.parent("slider-container");
-		sliderMain.style('width', '800px');
+		// if (!sliderMain) {
+		// 	sliderMain = createSlider(0,(hours.length)-1,(hours.length)-1);
+		// }
+		// sliderMain.parent("slider-container");
+		// sliderMain.style('width', "800px");
 		
 	}
 }
 
 //ACCESING DATA 
 function askPrice() {
-	urlF =url + inputPairFrom.value() + url2 + inputPairTo.value() +url3+sizeData;
-	loadJSON(urlF, gotData);	
+	
+	urlF = url + inputPairFrom.value() + url2 + inputPairTo.value() + urlInterval + sizeData + apiKey;
+	loadJSON(urlF, gotData);
+	
+	console.log(urlF);
 }
 
 function gotData(data) {
@@ -158,6 +177,8 @@ function gotData(data) {
 	console.log(preloadedCloses);
 }
 
+
+
 //CONTROLS 
 function timer() {
 	counterHtml.html(counter);
@@ -179,7 +200,7 @@ function play() {
 		interval = false;
 		buttonPlay.html("Play");
 
-		counter = sliderMain.value();
+		//counter = sliderMain.value();
 	}
 
 	if (counter == 0) {
@@ -188,7 +209,7 @@ function play() {
 		counter = (hours.length)-1;
 		counterHtml.html(counter);
 
-		sliderMain.value(counter);
+		// sliderMain.value(counter);
 		interval = false;
 		closes = [];
 	}		
@@ -200,7 +221,7 @@ function stop () {
 	counter = (hours.length)-1;
 	counterHtml.html(counter);
 
-	sliderMain.value(counter);
+	// sliderMain.value(counter);
 	interval = false;
 	closes = [];
 }
