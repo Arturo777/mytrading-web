@@ -17,18 +17,28 @@ html {
 }
 
 
-/*Structure*/
+/* ----Generic Styles-----------------*/
 body {
 	display:flex;
 	flex-direction: column;
 	justify-content: flex-start;
-
-
-	
 	min-height:100vh;
 }
 
+.subtittle {
+	font-size: 50px;
+	color:rgb(36, 37, 38);
+	text-align: center;
+}
 
+.inputs-container {
+	background-color: rgb(33, 67,65);
+	padding: 2%;
+}
+
+
+
+/* ----Header-------------------------------------------*/
 header {
 	/* As flex-container */
 	display: flex;
@@ -44,7 +54,7 @@ header {
 	/* Styles */
 }
 
-
+/* --------Navigation Menu---------------------*/
 nav ul {
 	/*As flex-container*/
 	display:flex;
@@ -57,6 +67,17 @@ nav ul {
 	background-color:  rgb(33, 67,65);
 }
 
+/* ------------Logo-------------------*/
+.logo a {
+	color: rgb(203, 201, 203);	flex-grow:6;
+	font-family:Cabin;
+	font-size: 30px;
+}
+.logo {
+	max-width: 200px;
+	margin-right: auto;	
+}
+/* ------------Menu links-------------*/
 nav li {
 
 	/*As flex-container*/
@@ -70,43 +91,6 @@ nav li {
 
 }
 
-footer {
-	/*As flex-container*/
-	display:flex;
-	justify-content: space-around;
-	align-items: center;
-
-	/*As flex-item*/
-	margin-top:auto;
-	/*Dimensions & Style*/
-
-	height: 100px;
-	background-color:  rgb(36, 37, 38);
-	
-	
-}
-
-.logo_footer {
-	color: rgb(203, 201, 203);;
-	font-family:Cabin;
-	font-size: 30px;
-}
-
-footer a {
-	text-decoration: none;
-	color:rgb(203, 201, 203);;
-}
-
-
-
-.active {
-	background-color:   rgb(49, 104, 101);
-}
-
-nav a:hover {
-	background-color:   rgb(49, 104, 101);
-}
-
 nav a {
 	color: rgb(203, 201, 203);	text-decoration: none;
 	display:flex;
@@ -117,38 +101,62 @@ nav a {
 	transition: 300ms;
 
 }
-
-
-
-.logo a {
-	color: rgb(203, 201, 203);	flex-grow:6;
-	font-family:Cabin;
-	font-size: 30px;
-	
+.active {
+	background-color:   rgb(49, 104, 101);
 }
-.logo {
-	max-width: 200px;
-	margin-right: auto;
-	
+nav a:hover {
+	background-color:   rgb(49, 104, 101);
 }
-
+/* ------------Main Tittle-------------*/
 header h1 {
 	font-size: 60px;
 	margin:auto;
 
 }
 
+/* ----Footer-------------------------------------------- */
+footer {
+	/*As flex-container*/
+	display:flex;
+	justify-content: space-around;
+	align-items: center;
+
+	/*As flex-item*/
+	margin-top:auto;
 
 
+	/*Dimensions & Style*/
+	height: 100px;
+	background-color:  rgb(36, 37, 38);
+	
+	
+}
+/* ------------Logo---------------------------- */
+.logo_footer {
+	color: rgb(203, 201, 203);;
+	font-family:Cabin;
+	font-size: 30px;
+}
+/* ------------Menu links---------------------- */
+footer a {
+	text-decoration: none;
+	color:rgb(203, 201, 203);;
+}
 
 
-/*.content {
+/* ----Index Content---------------------------------------*/
+
+/* ----Content-Wrapper------------------------------*/
+
+.content {
 	display:flex;
 	flex-wrap: wrap;
 	
 	justify-content: space-evenly;
 	align-items: start;
 }
+
+/* ----Content items------------------------*/
 
 .column {
 	margin-top:5%;
@@ -162,6 +170,8 @@ header h1 {
 	height: 50vh;
 	justify-content: space-around;
 }
+
+/* ----Column Link-----------*/
 
 .column a {
 	color: rgb(203, 201, 203);
@@ -187,32 +197,10 @@ header h1 {
 	background-color: rgb(49, 104, 101);
 }
 
-*/
 
+/* ----Risk Content---------------------------------------*/
 
-
-
-.subtittle {
-	font-size: 50px;
-	color:rgb(36, 37, 38);
-	text-align: center;
-}
-
-.inputs-container {
-	background-color: rgb(33, 67,65);
-	padding: 2%;
-}
 /*
-
-#tittlePair {
-	text-align: center;
-	margin:2%;
-	font-size: 60px;
-}
-
-
-
-
 .risk-wraper {
 	margin:auto;
 	display:flex;
@@ -223,6 +211,8 @@ header h1 {
 	text-align: center;
 
 }
+
+
 
 .tittle-inputs {
 
@@ -295,6 +285,14 @@ header h1 {
 */
 
 
+
+
+
+
+
+
+/* ----------------------Data Player---------------------- */
+
 .main-dataplayer {
 	/*Flex-Container*/
 	display:flex;
@@ -306,9 +304,30 @@ header h1 {
 	/*Dimensions and style*/
 	
 }
+
+#tittlePair {
+	text-align: center;
+	margin:2%;
+	font-size: 60px;
+}
 .inputs-container {
+	/*Flex-Container*/
+	display:flex;
+
+
+	/*Flex-Item*/
 	flex-grow: 1;
 
+}
+
+.inputs-columnB {
+
+
+	/*Flex-Item*/
+	flex-grow: 1;
+
+	/*Dimensions and style*/
+	text-align: center;
 }
 
 .canvas-controls {

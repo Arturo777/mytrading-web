@@ -24,60 +24,62 @@
       <h1> MY TRADING WEB</h1> 
     </header>
 
-    <h2 class = "subtittle">Data Player<h2>  
+    <h2 class = "subtittle">Data Player</h2>  
     <hr class= "subtittle-line"> 
     
     
     <main class="main-dataplayer">  
       <section class="inputs-container"> 
 
-          <h3>Pair </h3>
-
-          From:<select id="PairFrom">
-            <option value = "EUR">EUR</option>
-            <option>AUD</option>
-            <option>CAD</option>
-            <option>CHF</option>
-            <option>JPY</option>
-            <option>EUR</option>
-            <option>GBP</option>
-            <option>NZD</option>
-            <option>USD</option>
-          </select>
-
-          To:<select id="PairTo">
-            <option>USD</option>
-            <option>AUD</option>
-            <option>CAD</option>
-            <option>CHF</option>
-            <option>JPY</option>
-            <option>EUR</option>
-            <option>GBP</option>
-            <option>NZD</option>
-            <option>USD</option>
-          </select><br><br>
-
-
-          <h3>Time Frame</h3>
-          
-          
-          <select id="timeFrame" value="&interval=60min">
-            <option value="&interval=60min">60 min</option>
-            <option value="&interval=1min"> 1 min</option>
-            <option value="&interval=5min"> 5 min</option>
-            <option value="&interval=15min">15 min</option>
-            <option value="&interval=30min">30 min</option>
-          </select><br><br>
-
-
-          <div><h3>Data Size</h3>
-            <p>Full Data Size  <input type="checkbox" id ="fullData"></p> <br>
+          <div class="inputs-columnA">
+            <h3>Pair </h3>
+  
+            From:<select id="PairFrom">
+              <option value = "EUR">EUR</option>
+              <option>AUD</option>
+              <option>CAD</option>
+              <option>CHF</option>
+              <option>JPY</option>
+              <option>EUR</option>
+              <option>GBP</option>
+              <option>NZD</option>
+              <option>USD</option>
+            </select>
+  
+            To:<select id="PairTo">
+              <option>USD</option>
+              <option>AUD</option>
+              <option>CAD</option>
+              <option>CHF</option>
+              <option>JPY</option>
+              <option>EUR</option>
+              <option>GBP</option>
+              <option>NZD</option>
+              <option>USD</option>
+            </select><br><br>
+  
+  
+            <h3>Time Frame</h3>
+            
+            
+            <select id="timeFrame" value="&interval=60min">
+              <option value="&interval=60min">60 min</option>
+              <option value="&interval=1min"> 1 min</option>
+              <option value="&interval=5min"> 5 min</option>
+              <option value="&interval=15min">15 min</option>
+              <option value="&interval=30min">30 min</option>
+            </select><br><br>
+  
+  
+            <div><h3>Data Size</h3>
+              <p>Full Data Size  <input type="checkbox" id ="fullData"></p> <br>
+            </div>
+           
+            <button  id='askData'>Submit</button><br><br>
           </div>
-         
-          <button  id='askData'>Submit</button><br><br>
-        </div>  
+        
       
-        <div class="pair-counter">
+        <div class="pair-counter inputs-columnB">
           <H2 class = "subtittle_DataPlayer" id="tittlePair">EURUSD<H2>
           <div id="timer">
             <p>Counter: <span id="counterHtml">Loading...</span> Candlesticks</p> 
