@@ -8,7 +8,7 @@ let apiKey="&apikey=GLIC8LSNPTUPX8TM";
 
 let sizeData="&outputsize=compact";
 
-
+//TO STORE DATA
 let hours, prices;
 
 //ANIMATE
@@ -22,6 +22,8 @@ let preloadedCloses = [];
 let buttonPlay;
 let buttonStop;
 let sliderMain;
+
+let x = 80;
 
 //INPUTS
 let inputPairFrom, inputPairTo;
@@ -46,8 +48,7 @@ function setup() {
 	buttonStop = select("#stop");
 	buttonStop.mousePressed(stop);
 
-	//SLIDERS
-	sliderSpeed = select("#speed");
+	
 
 	//INPUTS
 	inputPairFrom = select("#PairFrom");
@@ -60,10 +61,67 @@ function setup() {
 
 	timeFrame = select("#timeFrame");
 
+	//SLIDER SPEED
+	sliderSpeed = select("#speed");
+
+	//SLIDER MAIN
+	
+
 	//CALL PRICES
 	askPrice();
+}
 
+//ACCESING DATA 
+function askPrice() {
+
+	if (fullData.checked) {
+		sizeData ="&outputsize=full" ;
+	}
 	
+	urlF = url + inputPairFrom.value() + url2 + inputPairTo.value() + urlInterval + sizeData + apiKey;
+	loadJSON(urlF, gotData);
+
+}
+
+function gotData(data) {
+
+	old = JSON.stringify(data).split(' ').join('_');
+	data = JSON.parse(old);
+	
+	//LOADED CANDLESTICKS
+	hours = Object.keys(data["Time_Series_FX_(60min)"]);
+
+	//PRICES
+	prices = Object.values(data["Time_Series_FX_(60min)"]);
+
+
+
+	loading();
+	
+	//DE UN SOLO CHINGADAZO PONER TODOS LOS CLOSES EN UN ARRAY
+	for (let i = 0; i < hours.length; i++) {
+		preloadedCloses.push(prices[i]["4._close"]);
+	}
+	console.log(preloadedCloses);
+}
+
+function loading() {
+	if (hours) {
+	   counter = (hours.length)-1;
+	   counterHtml.html(counter);
+	}
+   
+		//MAIN SLIDER 
+		x = (hours.length)-1;
+
+		if (sliderMain) {
+			sliderMain.remove();
+		}
+
+		sliderMain = createSlider(0,x,x);
+		sliderMain.parent("#slider-container");
+		sliderMain.style("width", "100%");
+		
 }
 
 function draw() {
@@ -106,13 +164,13 @@ function NewPair() {
 	tittlePair = select("#tittlePair");
 	tittlePair.html(inputPairFrom.value().toUpperCase()+inputPairTo.value().toUpperCase());
 
-	if (fullData.checked) {
-		console.log("checked!");
-		sizeData = "&outputsize=full";
 
-	 } 
+	
+	
 	
 	askPrice();
+
+	
 
 }
 
@@ -127,51 +185,9 @@ function slidering() {
 	}
 }
 
-function loading() {
-	if (hours){
-		counter = (hours.length)-1;
-		counterHtml.html(counter);
 
-		//SLIDERS 2
-		// console.log(hours.length);
 
-		 if (!sliderMain) {
-		 	sliderMain = createSlider(0,(hours.length)-1,(hours.length)-1);
-		 }
-		 sliderMain.parent("slider-container");
-		 sliderMain.style('width', "100%");
-		
-	}
-}
 
-//ACCESING DATA 
-function askPrice() {
-	
-	urlF = url + inputPairFrom.value() + url2 + inputPairTo.value() + urlInterval + sizeData + apiKey;
-	loadJSON(urlF, gotData);
-	
-	console.log(urlF);
-}
-
-function gotData(data) {
-
-	old = JSON.stringify(data).split(' ').join('_');
-	data = JSON.parse(old);
-	
-	//LOADED CANDLESTICKS
-	hours = Object.keys(data["Time_Series_FX_(60min)"]);
-
-	//PRICES
-	prices = Object.values(data["Time_Series_FX_(60min)"]);
-
-	loading();
-	
-	//DE UN SOLO CHINGADAZO PONER TODOS LOS CLOSES EN UN ARRAY
-	for (let i = 0; i < hours.length; i++) {
-		preloadedCloses.push(prices[i]["4._close"]);
-	}
-	console.log(preloadedCloses);
-}
 
 
 
