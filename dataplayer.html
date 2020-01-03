@@ -31,10 +31,7 @@
     <main class="main-dataplayer">  
       <section class="inputs-container"> 
 
-        
           <h3>Pair </h3>
-
-          
 
           From:<select id="PairFrom">
             <option value = "EUR">EUR</option>
@@ -60,25 +57,24 @@
             <option>USD</option>
           </select><br><br>
 
-          <!-- Time Frame<select id="timeFrame" value="&interval=60min">
-            <option value="&interval=60min"> 60 min</option>
-            <option>30 min</option>
-            <option>60 min</option> -->
+
+          <h3>Time Frame</h3>
+          
+          
+          <select id="timeFrame" value="&interval=60min">
+            <option value="&interval=60min">60 min</option>
+            <option value="&interval=1min"> 1 min</option>
+            <option value="&interval=5min"> 5 min</option>
+            <option value="&interval=15min">15 min</option>
+            <option value="&interval=30min">30 min</option>
+          </select><br><br>
 
 
-          <!-- <div>Data Size
-          <input type="radio" id="dataSize" value="&outputsize=compact" checked><br>
-          <label for="&outputsize=full">Full</label>
-          </div> -->
-
-          <div><h3>Data Size</h3><br>
-            Full Data Size<input type="checkbox" id ="fullData"> <br>
+          <div><h3>Data Size</h3>
+            <p>Full Data Size  <input type="checkbox" id ="fullData"></p> <br>
           </div>
          
-
-
-
-          <button  id='askData'>Submit</button>
+          <button  id='askData'>Submit</button><br><br>
         </div>  
       
         <div class="pair-counter">

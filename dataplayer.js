@@ -78,7 +78,7 @@ function askPrice() {
 		sizeData ="&outputsize=full" ;
 	}
 	
-	urlF = url + inputPairFrom.value() + url2 + inputPairTo.value() + urlInterval + sizeData + apiKey;
+	urlF = url + inputPairFrom.value() + url2 + inputPairTo.value() + timeFrame.value() + sizeData + apiKey;
 	loadJSON(urlF, gotData);
 
 }
@@ -87,14 +87,20 @@ function gotData(data) {
 
 	old = JSON.stringify(data).split(' ').join('_');
 	data = JSON.parse(old);
+
+	//SPLIT STRING
+
+	let splitString = split(timeFrame.value(), '=');
+
+
 	
 	//LOADED CANDLESTICKS
-	hours = Object.keys(data["Time_Series_FX_(60min)"]);
+	hours = Object.keys(data["Time_Series_FX_("+splitString[1]+")"]);
 
 	//PRICES
-	prices = Object.values(data["Time_Series_FX_(60min)"]);
+	prices = Object.values(data["Time_Series_FX_("+splitString[1]+")"]);
 
-
+	console.log(splitString[1]);
 
 	loading();
 	
@@ -184,11 +190,6 @@ function slidering() {
 	counterHtml.html(counter);
 	}
 }
-
-
-
-
-
 
 
 //CONTROLS 
