@@ -311,13 +311,17 @@ footer a {
 	font-size: 60px;
 }
 .inputs-container {
-	/*Flex-Container*/
-	display:flex;
-
 
 	/*Flex-Item*/
 	flex-grow: 1;
 
+}
+
+.inputs-wrapper {
+	/*Flex-Container*/
+	display:flex;
+	/*Flex-Item*/
+	flex-grow: 1;
 }
 
 .inputs-columnB {
