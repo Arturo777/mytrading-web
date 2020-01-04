@@ -75,7 +75,10 @@ function setup() {
 function askPrice() {
 
 	if (fullData.checked) {
-		sizeData ="&outputsize=full" ;
+		sizeData ="&outputsize=full";
+		console.log("checked!");
+	} else {
+		sizeData ="&outputsize=compact";
 	}
 	
 	urlF = url + inputPairFrom.value() + url2 + inputPairTo.value() + timeFrame.value() + sizeData + apiKey;
@@ -100,7 +103,7 @@ function gotData(data) {
 	//PRICES
 	prices = Object.values(data["Time_Series_FX_("+splitString[1]+")"]);
 
-	console.log(splitString[1]);
+	// console.log(splitString[1]);
 
 	loading();
 	
@@ -108,7 +111,7 @@ function gotData(data) {
 	for (let i = 0; i < hours.length; i++) {
 		preloadedCloses.push(prices[i]["4._close"]);
 	}
-	console.log(preloadedCloses);
+	// console.log(preloadedCloses);
 }
 
 function loading() {
@@ -156,14 +159,15 @@ function draw() {
 
 function keyPressed() {
 	if (keyCode === 32) {
-		console.log("space bar");
+		// console.log("space bar");
 	  play();
 	} 
 }
 
 function NewPair() {
+	if (!interval) {
 	buttonPlay.html("Play");
-	interval = false;
+	}
 	prices=false;
 	closes = [];
 	preloadedCloses = [];

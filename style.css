@@ -296,7 +296,7 @@ footer a {
 .main-dataplayer {
 	/*Flex-Container*/
 	display:flex;
-	flex-wrap: wrap;
+	flex-flow: row wrap;
 	justify-content: center;
 
 	/*Flex-Item*/
@@ -307,21 +307,20 @@ footer a {
 
 #tittlePair {
 	text-align: center;
-	margin:2%;
 	font-size: 60px;
 }
+
 .inputs-container {
 
 	/*Flex-Item*/
-	flex-grow: 1;
-
 }
 
 .inputs-wrapper {
 	/*Flex-Container*/
 	display:flex;
 	/*Flex-Item*/
-	flex-grow: 1;
+	border:2px solid red;
+
 }
 
 .inputs-columnB {
@@ -337,12 +336,13 @@ footer a {
 .canvas-controls {
 	/*Flex-Item*/
 	/*Dimensions and style*/
-
+	border: 2px solid red;
 }
 
 
 #slider-container {
 	text-align: center;
+	transform: rotate(180deg);
 
 }
 #canvas-container {
