@@ -1,5 +1,5 @@
 function vela() {
-
+push();
     //ACCESING PRICES
     open = prices[counter]["1._open"];
     high = prices[counter]["2._high"];
@@ -18,7 +18,9 @@ function vela() {
     downSpikeMapped = map(downSpike, max(preloadedCloses), min(preloadedCloses), -200, 200);
   
     //DRAWING SPIKE
-    strokeWeight(5);
+    strokeWeight(2);
+
+    stroke(80);
     line(0, downSpikeMapped, 0, upSpikeMapped);
     
     //DRAWING CANDLE
@@ -28,5 +30,5 @@ function vela() {
         fill(0,0,253)
     }
     quad(-35, 0, 35, 0, 35, closeMapped, -35, closeMapped);
-
+    pop();
 }

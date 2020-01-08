@@ -17,6 +17,7 @@ let counterHtml;
 let interval;
 let closes =[];
 let preloadedCloses = [];
+let closeMapped;
 
 //CONTROLS
 let buttonPlay;
@@ -33,10 +34,12 @@ let timeFrame;
 
 function setup() {
 
-	let cnvDiv = select("#canvas-container");
-	let cnv = createCanvas(450, 500);
+	let cnvDiv = select(canvasContainer);
+	cnv = createCanvas(canvasContainer.offsetWidth,canvasContainer.offsetHeight);
 
-	cnv.parent(cnvDiv);
+	// console.log(canvasContainer.offsetHeight);
+
+	 cnv.parent("#canvasContainer");
 
 	//COUNTER
 	counterHtml = select("#counterHtml");
@@ -71,12 +74,16 @@ function setup() {
 	askPrice();
 }
 
+// function windowResized() {
+// 	canvasResize(canvasContainer.offsetWidth, canvasContainer.offsetHeight);
+// }
+
 //ACCESING DATA 
 function askPrice() {
 
 	if (fullData.checked) {
 		sizeData ="&outputsize=full";
-		console.log("checked!");
+		// console.log("checked!");
 	} else {
 		sizeData ="&outputsize=compact";
 	}
@@ -134,7 +141,7 @@ function loading() {
 }
 
 function draw() {
-	background(280);
+	background(250);
 	if (!prices) {
 		textSize(40);
 		textAlign(CENTER);
@@ -145,15 +152,31 @@ function draw() {
 		slidering();
 		textSize(20);
 		fill(37);
-		text("Price: "+close,100,60);
+
+		push();
+		fill(204, 153, 0);
+		stroke(193);
+		strokeWeight(1);
+		translate(width/2, height/2);
+		line(width,closeMapped,-width,closeMapped);
+		pop();
+
+		push();
+		translate(width/2, height/2);
+		priceLabel = text(close,-width/3,closeMapped+6);
+		pop();
+	
+
 		// console.log(prices);
 		vela();
 
 		//ALMACENAR LOS DATOS EN EL ARRAY PARA DIBUJAR EL SPIKE
 		if (interval) {
 			closes.push(prices[counter]["4._close"]);
-			// console.log(min(closes));
+			//  console.log(min(closes));
 		} 
+
+		
 	}	
 }
 

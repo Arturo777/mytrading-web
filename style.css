@@ -319,35 +319,83 @@ footer a {
 	/*Flex-Container*/
 	display:flex;
 	/*Flex-Item*/
-	border:2px solid red;
 
 }
 
 .inputs-columnB {
-
-
 	/*Flex-Item*/
-	flex-grow: 1;
 
 	/*Dimensions and style*/
 	text-align: center;
 }
 
 .canvas-controls {
+	/*Flex-Container*/
+	display:flex;
+	flex-direction: column;
+
 	/*Flex-Item*/
+
 	/*Dimensions and style*/
-	border: 2px solid red;
+}
+
+#tittle-counter {
+	/*Flex-Container*/
+
+
+	/*Flex-Item*/
+
+
+	/*Dimensions and style*/
+	background-color: rgb(33, 67,65);
+
+}
+
+
+#canvasContainer {
+
+
+
+	/*Dimensions and style*/
+	flex-basis: 500px;
+}
+
+#canvasContainer > *:last-child {
+	border: 5px solid grey;
+	width:100% !important;
+	height:100% !important;
+}
+
+
+#sliders-buttons {
+	background-color: rgb(33, 67,65);
+
 }
 
 
 #slider-container {
+
 	text-align: center;
 	transform: rotate(180deg);
 
 }
-#canvas-container {
-	
+
+
+
+
+#speed {
+	transform: rotate(180deg);
+
 }
 
+/* --------------How Data Player Works---------------- */
 
+content {
+	/*Dimensions and style*/
+	margin:0 25%;
+	color: black;
+}
 
+content p {
+	margin:2%;
+}

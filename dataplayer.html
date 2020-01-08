@@ -77,32 +77,39 @@
           
           <button  id='askData'>Submit</button><br><br>
         </div>
-        
-      
-        
-
       </section> 
     
-      <section class = "canvas-controls">
 
-        <div class="pair-counter inputs-columnB">
-          <H2 class = "subtittle_DataPlayer" id="tittlePair">EURUSD<H2>
+
+      <section class = "canvas-controls inputs-columnB">
+
+        <div id="tittle-counter">
+          <div class="pair-counter">
+            <h2 class = "subtittle_DataPlayer" id="tittlePair">EURUSD</h2>
+          </div>  
+  
           <div id="timer">
             <p>Counter: <span id="counterHtml">Loading...</span> Candlesticks</p>
-             
-          </div>
-        </div>  
-        
-        <div id="canvas-container"></div>
-        <div id="controls-container">
+          </div> 
+        </div>
+
+        <div id="canvasContainer"></div>
+
+
+
+        <div id="sliders-buttons">
           <div id="slider-container"></div>
+  
           <input type="range" min="50" max="300" value="80" id="speed">
+  
           <div id="buttons">
-            <button  id='play'>Play</button>
-            <button  id='stop'>Stop</button> 
+              <button  id='play'>Play</button>
+              <button  id='stop'>Stop</button> 
           </div>
         </div>
+
       </section>
+
     </main>
 
   
