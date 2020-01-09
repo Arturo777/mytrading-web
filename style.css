@@ -54,7 +54,7 @@ header {
 	/* Styles */
 }
 
-/* --------Navigation Menu---------------------*/
+	/*Navigation Menu*/
 nav ul {
 	/*As flex-container*/
 	display:flex;
@@ -67,7 +67,7 @@ nav ul {
 	background-color:  rgb(33, 67,65);
 }
 
-/* ------------Logo-------------------*/
+/* Logo*/
 .logo a {
 	color: rgb(203, 201, 203);	flex-grow:6;
 	font-family:Cabin;
@@ -77,7 +77,7 @@ nav ul {
 	max-width: 200px;
 	margin-right: auto;	
 }
-/* ------------Menu links-------------*/
+/* Menu links*/
 nav li {
 
 	/*As flex-container*/
@@ -111,11 +111,15 @@ nav a:hover {
 header h1 {
 	font-size: 60px;
 	margin:auto;
+	text-align: center;
 
 }
 
+
+
 /* ----Footer-------------------------------------------- */
 footer {
+	
 	/*As flex-container*/
 	display:flex;
 	justify-content: space-around;
@@ -144,9 +148,12 @@ footer a {
 }
 
 
-/* ----Index Content---------------------------------------*/
 
-/* ----Content-Wrapper------------------------------*/
+
+/* ----Home Page---------------------------------------*/
+
+
+/* Content-Wrapper*/
 
 .content {
 	display:flex;
@@ -156,7 +163,7 @@ footer a {
 	align-items: start;
 }
 
-/* ----Content items------------------------*/
+/* Content items*/
 
 .column {
 	margin-top:5%;
@@ -171,7 +178,7 @@ footer a {
 	justify-content: space-around;
 }
 
-/* ----Column Link-----------*/
+/* Column Link*/
 
 .column a {
 	color: rgb(203, 201, 203);
@@ -198,94 +205,61 @@ footer a {
 }
 
 
-/* ----Risk Content---------------------------------------*/
-
-/*
-.risk-wraper {
-	margin:auto;
-	display:flex;
-	flex-flow:column wrap;
-	align-items: stretch;
-	border: 1px solid black;
-	max-width:800px;
-	text-align: center;
-
-}
 
 
 
-.tittle-inputs {
+/* ---------------------Risk Management-------------------------------*/
 
-	flex-grow:1;
-
-}
 
 .main-risk {
 	display:flex;
-	justify-content: center;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+}
 
-	flex-grow:1;
-
-
+.main-risk > * {
+	border:2px solid blue;
 }
 
 .lots-inputs {
 	display:flex;
-	flex-direction:column;
-	text-align:end;
-	align-items:flex-end;
-
-	flex-basis:50%;
-
+	align-items: flex-end;
+	flex-basis:30%;
+	font-size: larger;
+	align-items: stretch;
+	align-content: center;
+	min-width: 320px;
 }
-
-.button-result {
-	flex-basis:50%;
+.lots-inputs > * {
 	display:flex;
-	flex-direction:column;
+	flex-flow:column;
 	justify-content: space-around;
-	align-items:center;
-	margin-left:20px;
-
+	border:2px solid blue;
+	align-items: flex-end;
+	text-align: end;
 }
 
+
+#showLot {
+	align-self: center;
+	font-size: 1.5em;
+	padding: 2%;
+}
 #showLot a {
 	text-decoration: none;
 	color:black;
-	padding: 2%;
+}
+.result {
 	display:flex;
-
+	flex-basis:30%;
 }
 
-
-
-.lots-inputs div {
-	display:flex;
-	justify-content: flex-end;
-	margin-top:25px;
+.lots-result {
+	margin:auto;
+	font-size: 2em;
+	padding:3%;
 }
-
-
-.tittle-inputs {
-	background-color: rgb(9, 46, 46);	
-}
-
-
-.button-result button {
-	font-size: 1em;
-	font-family: 'Courier New', Courier, monospace;
-}
-
-
-.button-result button:hover {
-	background-color: rgb(19, 103, 103);	
-
-}
-
-*/
-
-
-
 
 
 
@@ -299,10 +273,6 @@ footer a {
 	flex-flow: row wrap;
 	justify-content: center;
 
-	/*Flex-Item*/
-
-	/*Dimensions and style*/
-	
 }
 
 #tittlePair {
@@ -310,23 +280,19 @@ footer a {
 	font-size: 60px;
 }
 
-.inputs-container {
-
-	/*Flex-Item*/
-}
 
 .inputs-wrapper {
 	/*Flex-Container*/
 	display:flex;
-	/*Flex-Item*/
 
+	/*Dimensions and style*/
 }
 
 .inputs-columnB {
-	/*Flex-Item*/
-
-	/*Dimensions and style*/
 	text-align: center;
+	padding: 2%;
+	background-color: rgb(33, 67,65);
+
 }
 
 .canvas-controls {
@@ -334,59 +300,44 @@ footer a {
 	display:flex;
 	flex-direction: column;
 
-	/*Flex-Item*/
-
-	/*Dimensions and style*/
-}
-
-#tittle-counter {
-	/*Flex-Container*/
-
-
-	/*Flex-Item*/
-
-
-	/*Dimensions and style*/
-	background-color: rgb(33, 67,65);
-
 }
 
 
 #canvasContainer {
-
-
-
 	/*Dimensions and style*/
 	flex-basis: 500px;
 }
 
 #canvasContainer > *:last-child {
-	border: 5px solid grey;
 	width:100% !important;
 	height:100% !important;
 }
-
-
-#sliders-buttons {
-	background-color: rgb(33, 67,65);
-
-}
-
 
 #slider-container {
 
 	text-align: center;
 	transform: rotate(180deg);
-
 }
-
-
-
 
 #speed {
 	transform: rotate(180deg);
 
 }
+
+#buttons {
+	/*Flex Container*/
+	display:flex;
+}
+.button {
+	font-size: 25px;
+	padding:5%;
+	margin:7.86% 0;
+	flex-grow:1;
+}
+
+
+
+
 
 /* --------------How Data Player Works---------------- */
 

@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MTW | Risk Management </title>
+    <script src="https://kit.fontawesome.com/ad3bb54443.js" crossorigin="anonymous"></script>
     <script src="Libraries/p5.js"></script>
     <script src="Libraries/p5.dom.js"></script>
     <script src="Libraries/p5.sound.js"></script>
@@ -29,31 +30,40 @@
     <hr class= "subtittle-line"> 
   
 
-    <div class="risk-wraper">
+    <div class="inputs-container main-risk">
 
-      <section class="inputs-container main-risk">
-    
         <div class="lots-inputs">
-          
-          <div>Balance:<input id='capital' size="10"></div>
 
-          <div>Stop Loss for 0.01:<input id='sc' size="10"></div>
+          <div class="inputs-name">
+            <div><p>Balance:</p></div>
+            <div><p>Stop Loss for 0.01:</p></div>
+            <div><p>%/Operation:</p></div>
+          </div>
 
-          <div>%/Operation:<input id='perc' size="10"></div>
+          <div class="inputs-camp">
+            <input id='capital' size="10">
+            <input id='sc' size="10">
+            <input id='perc' size="10">
+          </div>
+
         </div>
+
+        <button  id='showLot'>Show Lot Size</button>
+
       
-        <div class ="button-result">
-          <div><button  id='showLot'><a href="#">Show Lot Size</a></button> </div>
+        <div class ="result">
           <div class="lots-result"><p id='lots'>Lots:</p></div>
         </div>
-      </section>
+    
     </div>
 
  
     <footer>
       <h1 class=" logo_footer"><a>MTW</a></h1>
       <p>e-mail: dark.rekyem.1x@gmail.com</p>
-      <div><a href="https://github.com/Arturo777">Github Link</a></div>
+      <a href="https://github.com/Arturo777">
+        <span class="fab fa-github fa-3x"></span>
+      </a>
     </footer>
 
   </body>
