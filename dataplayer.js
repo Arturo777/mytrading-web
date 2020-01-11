@@ -13,11 +13,12 @@ let sizeData="&outputsize=compact";
 ////DAILY
 let dailyUrl = "https://www.alphavantage.co/query?function=FX_DAILY&from_symbol=EUR&to_symbol=USD&apikey=demo";
 
+
 //TO STORE DATA
 let hours, prices;
 
 //ANIMATE
-var counter;
+let counter;
 let counterHtml;
 let interval;
 let closes =[];
