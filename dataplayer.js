@@ -1,4 +1,6 @@
 //CALL PRICES
+
+////INTRADAY
 let url = "https://www.alphavantage.co/query?function=FX_INTRADAY&from_symbol=";
 let url2= "&to_symbol=";
 
@@ -7,6 +9,9 @@ let urlInterval= "&interval=60min";
 let apiKey="&apikey=GLIC8LSNPTUPX8TM";
 
 let sizeData="&outputsize=compact";
+
+////DAILY
+let dailyUrl = "https://www.alphavantage.co/query?function=FX_DAILY&from_symbol=EUR&to_symbol=USD&apikey=demo";
 
 //TO STORE DATA
 let hours, prices;
