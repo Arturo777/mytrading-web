@@ -11,11 +11,11 @@ let apiKey="&apikey=GLIC8LSNPTUPX8TM";
 let sizeData="&outputsize=compact";
 
 ////DAILY
-let dailyUrl = "https://www.alphavantage.co/query?function=FX_DAILY&from_symbol=EUR&to_symbol=USD&apikey=demo";
+let dailyUrl = "https://www.alphavantage.co/query?function=FX_DAILY&from_symbol=EUR&to_symbol=USD&apikey=GLIC8LSNPTUPX8TM";
 
 
 //TO STORE DATA
-let hours, prices;
+let rows, prices;
 
 //ANIMATE
 let counter;
@@ -34,7 +34,7 @@ let x = 80;
 
 //INPUTS
 let inputPairFrom, inputPairTo;
-let from, to, sumbmit;
+let from, to, submit;
 
 let timeFrame;
 
@@ -65,8 +65,8 @@ function setup() {
 
 	// inputPairTo.changed(NewPair);
 
-	sumbmit = select("#askData");
-	sumbmit.mousePressed(NewPair);
+	submit = select("#askData");
+	submit.mousePressed(NewPair);
 
 	timeFrame = select("#timeFrame");
 
@@ -86,7 +86,9 @@ function setup() {
 
 //ACCESING DATA 
 function askPrice() {
-
+	
+	
+	//DATA SIZE
 	if (fullData.checked) {
 		sizeData ="&outputsize=full";
 		// console.log("checked!");
@@ -94,9 +96,24 @@ function askPrice() {
 		sizeData ="&outputsize=compact";
 	}
 	
-	urlF = url + inputPairFrom.value() + url2 + inputPairTo.value() + timeFrame.value() + sizeData + apiKey;
-	loadJSON(urlF, gotData);
 
+	//LINK
+	if (timeFrame.value() == "Daily") {
+
+		urlF = "https://www.alphavantage.co/query?function=FX_DAILY&from_symbol=" + inputPairFrom.value() + "&to_symbol=" + inputPairTo.value() + apiKey + sizeData;
+
+	} else {
+
+		//LINK
+		urlF = url + inputPairFrom.value() + url2 + inputPairTo.value() + timeFrame.value() + sizeData + apiKey;
+	}
+
+	console.log(urlF);
+
+
+
+	//WHAT'S THIS?
+	loadJSON(urlF, gotData);
 }
 
 function gotData(data) {
@@ -108,33 +125,52 @@ function gotData(data) {
 
 	let splitString = split(timeFrame.value(), '=');
 
+	let intraDayString = "Time_Series_FX_("+splitString[1]+")";
+
+	let DailyString = "Time_Series_FX_(Daily)" ;
 
 	
-	//LOADED CANDLESTICKS
-	hours = Object.keys(data["Time_Series_FX_("+splitString[1]+")"]);
 
-	//PRICES
-	prices = Object.values(data["Time_Series_FX_("+splitString[1]+")"]);
+	if (timeFrame.value() == "Daily") {
 
-	// console.log(splitString[1]);
+		//TOTAL ROWS
+		rows = Object.keys(data[DailyString]); 
 
-	loading();
+		//PRICES
+		prices = Object.values(data[DailyString]);
+		
+	} else {
+
+		//TOTAL ROWS
+		rows = Object.keys(data[intraDayString]);
+
+		//PRICES
+		prices = Object.values(data[intraDayString]);
+	}
+		// console.log(splitString[1]);
+
+		console.log(rows);
+		loading();
 	
+
+
 	//DE UN SOLO CHINGADAZO PONER TODOS LOS CLOSES EN UN ARRAY
-	for (let i = 0; i < hours.length; i++) {
+	for (let i = 0; i < rows.length; i++) {
 		preloadedCloses.push(prices[i]["4._close"]);
 	}
+
 	// console.log(preloadedCloses);
+
 }
 
 function loading() {
-	if (hours) {
-	   counter = (hours.length)-1;
+	if (rows) {
+	   counter = (rows.length)-1;
 	   counterHtml.html(counter);
 	}
    
 		//MAIN SLIDER 
-		x = (hours.length)-1;
+		x = (rows.length)-1;
 
 		if (sliderMain) {
 			sliderMain.remove();
@@ -252,7 +288,7 @@ function play() {
 	if (counter == 0) {
 		clearInterval(interval);
 		buttonPlay.html("Play");
-		counter = (hours.length)-1;
+		counter = (rows.length)-1;
 		counterHtml.html(counter);
 
 		sliderMain.value(counter);
@@ -264,7 +300,7 @@ function play() {
 function stop () {
 	clearInterval(interval);
 	buttonPlay.html("Play");
-	counter = (hours.length)-1;
+	counter = (rows.length)-1;
 	counterHtml.html(counter);
 
 	 sliderMain.value(counter);
