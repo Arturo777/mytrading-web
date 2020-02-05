@@ -71,6 +71,7 @@ function setup() {
 	timeFrame = select("#timeFrame");
 
 	//SLIDER SPEED
+	SpeedValue = select("#SpeedValue");
 	sliderSpeed = select("#speed");
 
 	//SLIDER MAIN
@@ -177,9 +178,12 @@ function loading() {
 		}
 
 		sliderMain = createSlider(0,x,x);
-		sliderMain.parent("#slider-container");
+		sliderMain.parent("#sliderMain-container");
 		sliderMain.style("width", "100%");
-		
+		sliderMain.id("sliderMain");
+
+		//SPEED SLIDER
+		SpeedValue.html(sliderSpeed.value());
 }
 
 function draw() {
@@ -189,11 +193,13 @@ function draw() {
 		textAlign(CENTER);
 		fill(37);
 		text('Loading...', width/2-25, height/2);
+
 		
 	} else {
 		slidering();
 		textSize(20);
 		fill(37);
+
 
 		push();
 		fill(204, 153, 0);
@@ -258,6 +264,12 @@ function slidering() {
 	sliderMain.value(counter);
 	counterHtml.html(counter);
 	}
+
+	let SpeedValueMapped = map(sliderSpeed.value(), 50, 500, 100, 1);
+
+	
+
+	SpeedValue.html(SpeedValueMapped.toFixed(0));
 }
 
 
