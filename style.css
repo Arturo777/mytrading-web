@@ -219,7 +219,6 @@ footer a {
 }
 
 .main-risk > * {
-	border:2px solid blue;
 }
 
 .lots-inputs {
@@ -235,7 +234,6 @@ footer a {
 	display:flex;
 	flex-flow:column;
 	justify-content: space-around;
-	border:2px solid blue;
 	align-items: flex-end;
 	text-align: end;
 }
@@ -245,7 +243,14 @@ footer a {
 	align-self: center;
 	font-size: 1.5em;
 	padding: 2%;
+	cursor:pointer;
 }
+
+#showLot:hover {
+	background-color: rgb(178, 194, 176);
+}
+
+
 #showLot a {
 	text-decoration: none;
 	color:black;
@@ -253,6 +258,8 @@ footer a {
 .result {
 	display:flex;
 	flex-basis:30%;
+	margin-left: 1px;
+
 }
 
 .lots-result {

@@ -109,7 +109,7 @@ function askPrice() {
 		urlF = url + inputPairFrom.value() + url2 + inputPairTo.value() + timeFrame.value() + sizeData + apiKey;
 	}
 
-	console.log(urlF);
+	//console.log(urlF);
 
 
 
@@ -150,7 +150,7 @@ function gotData(data) {
 	}
 		// console.log(splitString[1]);
 
-		console.log(rows);
+		//console.log(rows);
 		loading();
 	
 
